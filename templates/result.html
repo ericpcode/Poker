@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preflop Range Result</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preflop Range Result</h1>
+
+    <table id="result-table">
+        {% for row in range %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+        var resultTable = document.getElementById("result-table");
+
+        // Fetch the two-card hands from the server (replace with your actual implementation)
+        // This assumes you have a route in Flask that returns the list of two-card hands
+        fetch('/hands')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                // Update the result table with the fetched data
+                for (var i = 0; i < data.length; i++) {
+                    var row = document.createElement("tr");
+                    for (var j = 0; j < data[i].length; j++) {
+                        var cell = document.createElement("td");
+                        cell.innerText = data[i][j];
+                        row.appendChild(cell);
+                    }
+                    resultTable.appendChild(row);
+                }
+            });
+    </script>
+</body>
+</html>

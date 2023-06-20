@@ -1,0 +1,61 @@
+#container {
+    position: relative;
+  }
+
+  #board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* .player-table {
+    position: absolute;
+    transform-origin: center center;
+  } */
+
+  #player1 {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  #player2 {
+      position: absolute;
+      top: 20%;
+      left: 85%;
+      transform: translateX(-50%);
+  }
+
+  #player3 {
+      position: absolute;
+      top: 85%;
+      left: 85%;
+      transform: translateX(-50%);
+  }
+
+  #player4 {
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  #player5 {
+      position: absolute;
+      top: 85%;
+      left: 15%;
+      transform: translateX(-50%);
+  }
+
+  #player6 {
+      position: absolute;
+      top: 20%;
+      left: 15%;
+      transform: translateX(-50%);
+  }
+
+  .clicked {
+    background-color: #b61e90; /* Replace with your desired background color */
+  }

@@ -1,0 +1,28 @@
+/* Set the table width and height */
+table {
+  width: 700px;
+  height: 700px;
+  user-select: none;
+}
+
+/* Style the table cells */
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Set the border width and color */
+table, td {
+  border-width: 2px;
+  border-color: #0f0404;
+}
+
+/* Add a custom class to change background color on click */
+.clicked {
+  background-color: #ff0000;
+}
+
+#selected-cells {
+  margin-top: 10px;
+}

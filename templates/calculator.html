@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='/css/calculator.css')}}">
+</head>
+<body>
+  <table id = "deck">
+    <tr>
+    {% for index in range(cards|length) %}
+      {% set card = cards[index] %}
+      {% set rank = card[0] %}
+      {% set suit = card[1] %}
+      {% set cell_id = rank ~ suit %}
+      <td id="{{ cell_id }}" class = "clicked-deck">
+        <span class="rank">{{ rank }}</span>
+        <img src="{{ url_for('static', filename='images/' ~ suit[0] ~ '.png') }}" alt="{{ card }}" width="50" height="50">
+      </td>
+      {% if index % 4 == 3 %}
+        </tr><tr>
+      {% endif %}
+    {% endfor %}
+    </tr>
+  </table>
+
+  <table id="board" border="1">
+    <!-- Board cards go here -->
+    <tr>
+      <td class="group-clicks">Board Card 1</td>
+      <td class="group-clicks">Board Card 2</td>
+      <td class="group-clicks">Board Card 3</td>
+      <td class="group-clicks">Board Card 4</td>
+      <td class="group-clicks">Board Card 5</td>
+    </tr>
+  </table>
+
+  <div class="player-table">
+    <table id="player1" border="1">
+      <!-- Player 1's cards go here -->
+      <tr>
+        <td class="group-clicks">Player 1 Card 1</td>
+        <td class="group-clicks">Player 1 Card 2</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="player-table">
+    <table id="player2" border="1">
+      <!-- Player 2's cards go here -->
+      <tr>
+        <td class="group-clicks">Player 2 Card 1</td>
+        <td class="group-clicks">Player 2 Card 2</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="player-table">
+    <table id="player3" border="1">
+      <!-- Player 3's cards go here -->
+      <tr>
+        <td class="group-clicks">Player 3 Card 1</td>
+        <td class="group-clicks">Player 3 Card 2</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="player-table">
+    <table id="player4" border="1">
+      <!-- Player 4's cards go here -->
+      <tr>
+        <td class="group-clicks">Player 4 Card 1</td>
+        <td class="group-clicks">Player 4 Card 2</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="player-table">
+    <table id="player5" border="1">
+      <!-- Player 5's cards go here -->
+      <tr>
+        <td class="group-clicks">Player 5 Card 1</td>
+        <td class="group-clicks">Player 5 Card 2</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="player-table">
+    <table id="player6" border="1">
+      <!-- Player 6's cards go here -->
+      <tr>
+        <td class="group-clicks">Player 6 Card 1</td>
+        <td class="group-clicks">Player 6 Card 2</td>
+      </tr>
+    </table>
+  </div>
+  <script src="{{ url_for('static', filename='/js/calculator.js') }}"></script>
+</body>
+</html>

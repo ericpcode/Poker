@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='/css/styles.css')}}">
+  <title>Preflop Range Calculator</title>
+</head>
+<body>
+  <h3>Preflop Range Calculator</h3>
+
+  <form id="range-form">
+    <input type="range" id="percentage-slider" name="percentage" min="0" max="100" value="50" oninput="updateSliderValue(this.value)">
+    <span id="slider-value">50%</span>
+    <br>
+    <button id="calculate-button" type="button">Calculate</button>
+  </form>
+
+  <div id="selected-cells">Selected Hands: </div>
+
+  <button onclick="clearSelectedCells()">Clear</button>
+
+  <table>
+    {% for i in range(13) %}
+        <tr>
+        {% for j in range(13) %}
+          <td id="{{ hands[i * 13 + j] }}" onclick="toggleCell(this)">{{ hands[i * 13 + j] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+  </table>
+  <script src="{{ url_for('static', filename='/js/preflop.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
